@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import Layout from './Layout'
 import { Link, useNavigate } from 'react-router-dom'
-// import firebaseAppConfig from '../util/firebase-config'
-// import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
+import firebaseAppConfig from '../util/firebase-config'
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
 
-// const auth = getAuth(firebaseAppConfig)
+const auth = getAuth(firebaseAppConfig)
 
 const Signup = () => {
   const navigate = useNavigate()
@@ -66,10 +66,10 @@ const Signup = () => {
                     </div>
                     {
                       loader ?
-                      <h1 className='text-lg font-semibold text-green-600'>Loading...</h1>
+                      <h1 className='text-lg font-semibold text-gray-600'>Loading...</h1>
                       :
                       <button 
-                        className='mt-2 bg-[#d1221d] py-2 px-8 rounded-lg w-fit text-white font-semibold hover:bg-[#3e82ff]' 
+                        className='mt-2 bg-[#d1221d] py-2 px-8 rounded-lg w-fit text-white font-semibold hover:bg-[#f72822]' 
                         style={{
                           transition:'0.3s'
                         }}

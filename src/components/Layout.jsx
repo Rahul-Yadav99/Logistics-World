@@ -1,5 +1,9 @@
-import { React, useState } from 'react'
+import { React, useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import firebaseAppConfig from '../util/firebase-config'
+import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth'
+
+const auth = getAuth(firebaseAppConfig)
 
 const Layout = ({children}) => {
 
@@ -7,6 +11,17 @@ const Layout = ({children}) => {
 
     const [accountMenu, setAccountMenu] = useState(false)
 
+    const [session, setSession] = useState(null)
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if(user){
+                setSession(user)
+            }else{
+                setSession(null)
+            }
+        })
+    }, [])
 
     const menus = [
         {
@@ -44,31 +59,39 @@ const Layout = ({children}) => {
                         </li>
                     ))
                 }
-                <Link to={'/login'} className='text-[16px] py-2 px-5 hover:bg-[#d1221d] hover:text-white border border-[#d1221d] rounded'>Login</Link>
-                <Link to={'/signup'} className='text-[16px] py-2 px-6 bg-[#d1221d] text-white rounded hover:bg-[#f72822]'>Signup</Link>
-                <button className="bg-gray-600 rounded-full relative">
-                    <img src="/img/avtar.png" alt="" className="w-14 h-14 " onClick={()=>setAccountMenu(!accountMenu)} />
-                        {
-                            accountMenu && 
-                            <div className="shadow-xl absolute top-[65px] right-0 bg-white py-6">
-                                <div className='flex flex-col items-start'>
-                                    <Link to={'/profile'} className="text-base font-semibold hover:bg-gray-100 w-full py-2 px-16 text-start">
-                                        <i className="ri-user-line mr-3 text-gray-800"></i>
-                                        Profile
-                                    </Link>
-                                    <Link to={'/cart'} className="text-base font-semibold hover:bg-gray-100 w-full py-2 px-16 text-start">
-                                        <i className="ri-shopping-cart-line mr-3 text-gray-800"></i>
-                                        Cart
-                                    </Link>
-                                    <button className="text-base font-semibold w-full text-left py-2 px-16 hover:bg-gray-100">
-                                        <i className="ri-logout-box-line mr-3 text-red-500"></i>
-                                        Logout
-                                    </button>
+                {
+                    !session &&
+                    <>
+                        <Link to={'/login'} className='text-[16px] py-2 px-5 hover:bg-[#d1221d] hover:text-white border border-[#d1221d] rounded'>Login</Link>
+                        <Link to={'/signup'} className='text-[16px] py-2 px-6 bg-[#d1221d] text-white rounded hover:bg-[#f72822]'>Signup</Link>
+                    </>
+                }
+                {
+                    session &&
+                    <button className="bg-gray-600 rounded-full relative">
+                        <img src="/img/avtar.png" alt="" className="w-14 h-14 " onClick={()=>setAccountMenu(!accountMenu)} />
+                            {
+                                accountMenu && 
+                                <div className="shadow-xl absolute top-[65px] right-0 bg-white py-6">
+                                    <div className='flex flex-col items-start'>
+                                        <Link to={'/profile'} className="text-base font-semibold hover:bg-gray-100 w-full py-2 px-16 text-start">
+                                            <i className="ri-user-line mr-3 text-gray-800"></i>
+                                            Profile
+                                        </Link>
+                                        <Link to={'/cart'} className="text-base font-semibold hover:bg-gray-100 w-full py-2 px-16 text-start">
+                                            <i className="ri-shopping-cart-line mr-3 text-gray-800"></i>
+                                            Cart
+                                        </Link>
+                                        <button className="text-base font-semibold w-full text-left py-2 px-16 hover:bg-gray-100" onClick={() => signOut(auth)}>
+                                            <i className="ri-logout-box-line mr-3 text-red-500"></i>
+                                            Logout
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        }
-                        
-                </button>
+                            }
+                            
+                    </button>
+                }
             </ul>
         </div>
       </nav>
