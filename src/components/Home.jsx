@@ -32,7 +32,7 @@ const Home = () => {
                 <div className='px-4 space-y-7'>
                     <h1 className='text-4xl font-bold'>Document and Parcel Shipping</h1>
                     <h1 className='text-2xl text-gray-600'>For All Shippers</h1>
-                    <p className='text-[16px] text-gray-600 w-[600px]'>Learn about Logistics Express – the undisputed global leader in international express shipping.</p>
+                    <p className='text-[16px] text-gray-600 w-[600px]'>Learn about Logistics World – the undisputed global leader in international express shipping.</p>
                 </div>
                 <div className="bg-[#f2f2f2] p-4 mt-7">
                     <h1 className='text-lg font-bold'>Services Available</h1>
@@ -65,7 +65,7 @@ const Home = () => {
                             transition:'0.3s'
                         }}    
                     >
-                        Explore Logistics Express
+                        Explore Logistics World
                     </Link>
                 </div>
             </div>
@@ -114,7 +114,7 @@ const Home = () => {
                             transition:'0.3s'
                         }}    
                     >
-                        Explore Logistics Express
+                        Explore Logistics World
                     </Link>
                 </div>
             </div>
@@ -156,7 +156,7 @@ const Home = () => {
                             transition:'0.3s'
                         }}    
                     >
-                        Explore Logistics Express
+                        Explore Logistics World
                     </Link>
                 </div>
             </div>
