@@ -34,6 +34,7 @@ const Booking = () => {
 
   const { id } = useParams();
   const servicesDetail = services.find((prod) => prod.id === parseInt(id));
+  
   return (
     <Layout>
       <div className='w-6/12 m-auto py-8'>
