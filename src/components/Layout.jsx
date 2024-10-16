@@ -22,7 +22,7 @@ const Layout = ({children}) => {
             }
         })
     }, [])
-
+    
     const menus = [
         {
             label: 'Home',
@@ -45,6 +45,7 @@ const Layout = ({children}) => {
             <Link to={'/'} className='font-bold text-3xl'>
                 Logistics World
             </Link>
+            
             <ul className='flex gap-2 items-center justify-center'>
                 {
                     menus.map((item, index) => (
@@ -74,13 +75,14 @@ const Layout = ({children}) => {
                                 accountMenu && 
                                 <div className="shadow-xl absolute top-[65px] right-0 bg-white py-6">
                                     <div className='flex flex-col items-start'>
+                                        <h1 className='text-center text-base font-semibold w-full py-2 px-16 bg-gray-100'>{session.displayName}</h1>
                                         <Link to={'/profile'} className="text-base font-semibold hover:bg-gray-100 w-full py-2 px-16 text-start">
                                             <i className="ri-user-line mr-3 text-gray-800"></i>
                                             Profile
                                         </Link>
-                                        <Link to={'/cart'} className="text-base font-semibold hover:bg-gray-100 w-full py-2 px-16 text-start">
-                                            <i className="ri-shopping-cart-line mr-3 text-gray-800"></i>
-                                            Cart
+                                        <Link to={'/orders'} className="text-base font-semibold hover:bg-gray-100 w-full py-2 px-16 text-start">
+                                            <i className="ri-box-3-line mr-3 text-gray-800"></i>
+                                            Order`s
                                         </Link>
                                         <button className="text-base font-semibold w-full text-left py-2 px-16 hover:bg-gray-100" onClick={() => signOut(auth)}>
                                             <i className="ri-logout-box-line mr-3 text-red-500"></i>

@@ -53,7 +53,7 @@ const Login = () => {
                 <form className='mt-5 space-y-5' onSubmit={login}>
                     <div className='flex flex-col gap-2'>
                         <label className='font-semibold text-lg'>Email:</label>
-                        <input onChange={handleChange} type="email" name="email" placeholder='rahul@gmail.com' required className='caret-[#d1221d] p-3 border border-gray-300 rounded'/>
+                        <input onChange={handleChange} type="email" name="email" placeholder='rahul@gmail.com' required className='p-3 border border-gray-300 rounded'/>
                     </div>
                     <div className='flex flex-col gap-2'>
                         <label className='font-semibold text-lg'>Password:</label>
