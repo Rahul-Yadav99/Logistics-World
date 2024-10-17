@@ -3,8 +3,7 @@ import Layout from './Layout'
 import { Link } from 'react-router-dom'
 
 const Services = () => {
-    
-
+  
     const [services, setServices] = useState([
         {
             id: 1,
