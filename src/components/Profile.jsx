@@ -18,7 +18,6 @@ const Profile = () => {
               <input
                 required
                 name="fullname"
-                placeholder="Rahul"
                 className="p-3 border mt-3 border-gray-300 rounded"
               />
             </div>
@@ -27,7 +26,6 @@ const Profile = () => {
               <input
                 required
                 name="email"
-                placeholder="rahul@gmail.com"
                 className="mt-3 p-3 border border-gray-300 rounded"
               />
             </div>
