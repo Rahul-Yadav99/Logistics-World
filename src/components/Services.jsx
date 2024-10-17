@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import Layout from './Layout'
 import { Link } from 'react-router-dom'
 
 const Services = () => {
+    
+
     const [services, setServices] = useState([
         {
             id: 1,
@@ -49,7 +51,6 @@ const Services = () => {
                         ))
                     }
             </div>
-            <div className='mt-3 h-[1px] bg-[#d1221d]' />
         </div>
     </Layout>
   )
