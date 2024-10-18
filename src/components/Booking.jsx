@@ -1,14 +1,23 @@
-import { React, useState } from 'react'
+import { React, useState, useEffect } from 'react'
 import Layout from './Layout'
-import {  useParams } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
+import {  Link, useParams } from "react-router-dom";
+import firebaseAppConfig from "../util/firebase-config";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getFirestore, addDoc, collection} from 'firebase/firestore'
+
+import Swal from "sweetalert2";
+
+const auth = getAuth(firebaseAppConfig);
+const db = getFirestore(firebaseAppConfig);
 
 const Booking = () => {
-
+  const navigate = useNavigate();
   
-
   const [formValue, setFormValue] = useState({
       pickuplocation: '',
-      destination: ''
+      destination: '',
+      userId: '',
     })
 
   const [services, setServices] = useState([
@@ -41,8 +50,41 @@ const Booking = () => {
   const { id } = useParams();
   const servicesDetail = services.find((prod) => prod.id === parseInt(id));
 
-  const booking = (e) => {
-    e.preventDefault()
+  const [session, setSession] = useState(null);
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setSession(user);
+        setFormValue({
+          ...formValue,
+          userId: user.uid,
+         
+
+        })
+      } else {
+        setSession(null);
+        navigate("/signup");
+      }
+    });
+  }, []);
+
+
+  const booking = async(e) => {
+    try {
+      e.preventDefault();
+      await addDoc(collection(db, "locations"), formValue);
+      new Swal({
+        icon: "success",
+        title: "Shipment booked successfully",
+      });
+      navigate('/orders')
+    } catch (err) {
+      new Swal({
+        icon: "error",
+        title: "Failed",
+        text: err.message,
+      });
+    }
   }
 
   const handleOnChange = (e) => {
@@ -57,7 +99,7 @@ const Booking = () => {
   
   return (
     <Layout>
-      <div className='w-6/12 m-auto py-8'>
+      <div className='w-10/12 m-auto py-8'>
         <h1 className='text-gray-600 text-3xl font-bold'> Book Your Shipment </h1>
         <div className="h-[1px] mt-3 bg-[#d1221d]" />
         <div className="bg-white mt-3 rounded shadow-lg p-8 grid grid-cols-2 ">
