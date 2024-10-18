@@ -60,7 +60,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className='px-4'>
-                    <Link to={'/booking'} className='block mt-7 w-full bg-[#d1221d] text-center text-white font-semibold py-3 hover:bg-[#f72822]'
+                    <Link to={'/services'} className='block mt-7 w-full bg-[#d1221d] text-center text-white font-semibold py-3 hover:bg-[#f72822]'
                         style={{
                             transition:'0.3s'
                         }}    
@@ -109,7 +109,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className='px-4'>
-                    <Link to={'/booking'} className='block mt-7 w-full bg-[#d1221d] text-center text-white font-semibold py-3 hover:bg-[#f72822]'
+                    <Link to={'/services'} className='block mt-7 w-full bg-[#d1221d] text-center text-white font-semibold py-3 hover:bg-[#f72822]'
                         style={{
                             transition:'0.3s'
                         }}    
@@ -151,7 +151,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className='px-4'>
-                    <Link to={'/booking'} className='block mt-7 w-full bg-[#d1221d] text-center text-white font-semibold py-3 hover:bg-[#f72822]'
+                    <Link to={'/services'} className='block mt-7 w-full bg-[#d1221d] text-center text-white font-semibold py-3 hover:bg-[#f72822]'
                         style={{
                             transition:'0.3s'
                         }}    
@@ -178,7 +178,7 @@ const Home = () => {
                 }
             </div>
         </div>
-            {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.391026825623!2d77.25853197601774!3d28.67794738201591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfc5e54e6b163%3A0x523ae20fe007eccc!2sDr.%20Akhilesh%20Das%20Gupta%20Institute%20of%20Professional%20Studies!5e0!3m2!1sen!2sin!4v1728994242466!5m2!1sen!2sin" width="100%" height="450" allowfullscreen=""  referrerPolicy="no-referrer-when-downgrade"></iframe> */}
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.391026825623!2d77.25853197601774!3d28.67794738201591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfc5e54e6b163%3A0x523ae20fe007eccc!2sDr.%20Akhilesh%20Das%20Gupta%20Institute%20of%20Professional%20Studies!5e0!3m2!1sen!2sin!4v1728994242466!5m2!1sen!2sin" width="100%" height="450" allowfullscreen=""  referrerPolicy="no-referrer-when-downgrade"></iframe>
     </Layout>
   )
 }
