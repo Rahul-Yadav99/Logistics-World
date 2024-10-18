@@ -47,7 +47,7 @@ const Signup = () => {
     <Layout>
         <div className='w-10/12 m-auto py-8 grid md:grid-cols-2 grid-cols-1'>
           <div className="flex items-center">
-            <img src="/img/login.svg" alt="" className='object-cover h-[700px] w-fit  ' />
+            <img src="/img/login.svg" alt="" className='object-cover h-[500px] w-fit  ' />
           </div>
             <div className='flex flex-col justify-center'>
                 <h1 className='text-3xl font-bold text-[#d1221d]'>New User</h1>
