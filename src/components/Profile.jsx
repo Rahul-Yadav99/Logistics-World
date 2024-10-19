@@ -200,28 +200,28 @@ const Profile = () => {
                 className="w-14 h-14 bg-gray-600 rounded-full mb-3 mt-3"
               />
               <h1 className="font-semibold text-lg mt-4">
-                User Name: <span className="text-gray-600">{formValue.userName}</span>
+                 Name: <span className="text-gray-600">{formValue.userName}</span>
               </h1>
               <h1 className="font-semibold text-lg mt-4">
-                User Email: <span className="text-gray-600">{formValue.userEmail}</span>
+                 Email: <span className="text-gray-600">{formValue.userEmail}</span>
               </h1>
               <h1 className="font-semibold text-lg mt-4">
-                User Area: <span className="text-gray-600">{formValue.address}</span>
+                 Area: <span className="text-gray-600">{formValue.address}</span>
               </h1>
               <h1 className="font-semibold text-lg mt-4">
-                User City: <span className="text-gray-600">{formValue.city}</span>
+                 City: <span className="text-gray-600">{formValue.city}</span>
               </h1>
               <h1 className="font-semibold text-lg mt-4">
-                User State: <span className="text-gray-600">{formValue.state}</span>
+                 State: <span className="text-gray-600">{formValue.state}</span>
               </h1>
               <h1 className="font-semibold text-lg mt-4">
-                User Country: <span className="text-gray-600">{formValue.country}</span>
+                 Country: <span className="text-gray-600">{formValue.country}</span>
               </h1>
               <h1 className="font-semibold text-lg mt-4">
-                User Pincode: <span className="text-gray-600">{formValue.pincode}</span>
+                 Pincode: <span className="text-gray-600">{formValue.pincode}</span>
               </h1>
               <h1 className="font-semibold text-lg mt-4">
-                User Mobile: <span className="text-gray-600">{formValue.mobile}</span>
+                 Mobile: <span className="text-gray-600">{formValue.mobile}</span>
               </h1>
             </div>
           </div>
