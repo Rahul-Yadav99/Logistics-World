@@ -39,7 +39,7 @@ const Services = () => {
                     {
                         services.map((item) => (
                             <div key={services.id} className='grid grid-cols-3 bg-white shadow-2xl rounded-lg py-4 px-2'>
-                                <img src={item.image} alt="" className='h-[237px] object-cover col-span-1 ' />
+                                <img src={item.image} alt="" className='w-[237px] object-cover col-span-1 ' />
                                 <div className=" flex flex-col justify-center gap-3 col-span-2 pr-4">
                                     <h1 className='text-3xl font-bold '>{item.title}</h1>
                                     <h1 className='text-xl font-semibold text-gray-600 '>Starting from <span className='font-bold text-2xl text-gray-600'>₹{item.price}</span></h1>
